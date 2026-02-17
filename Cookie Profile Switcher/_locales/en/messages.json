@@ -1,0 +1,518 @@
+{
+  "extName": {
+    "message": "Cookie Profile Switcher",
+    "description": "Extension name"
+  },
+  "extDesc": {
+    "message": "Store and manage multiple cookie profiles for each domain, easily switch between different user sessions",
+    "description": "Extension description"
+  },
+  "currentDomain": {
+    "message": "Current Domain: ",
+    "description": "Current domain label"
+  },
+  "loading": {
+    "message": "Loading profiles...",
+    "description": "Loading state text"
+  },
+  "errorOccurred": {
+    "message": "An error occurred",
+    "description": "Error state text"
+  },
+  "retryBtn": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+  "currentStatus": {
+    "message": "Current Status",
+    "description": "Current status title"
+  },
+  "cookieCount": {
+    "message": "Cookies",
+    "description": "Cookie count text"
+  },
+  "current": {
+    "message": "Current",
+    "description": "Current profile"
+  },
+  "createNewProfile": {
+    "message": "Create New Profile",
+    "description": "Create new profile button"
+  },
+  "clearCookies": {
+    "message": "Clear Cookies",
+    "description": "Clear cookies button"
+  },
+  "cookieDiagnosis": {
+    "message": "Cookie Diagnosis",
+    "description": "Cookie diagnosis button"
+  },
+  "savedProfiles": {
+    "message": "Saved Profiles",
+    "description": "Saved profiles title"
+  },
+  "noProfilesTitle": {
+    "message": "Creating default profile for you...",
+    "description": "No profiles title"
+  },
+  "noProfilesHint": {
+    "message": "The current cookie state will be automatically saved on first use",
+    "description": "No profiles hint"
+  },
+  "switchBtn": {
+    "message": "Switch",
+    "description": "Switch button"
+  },
+  "syncBtn": {
+    "message": "Sync",
+    "description": "Sync button"
+  },
+  "renameBtn": {
+    "message": "Rename",
+    "description": "Rename button"
+  },
+  "deleteBtn": {
+    "message": "Delete",
+    "description": "Delete button"
+  },
+  "defaultBadge": {
+    "message": "Default",
+    "description": "Default profile badge"
+  },
+  "emptyBadge": {
+    "message": "Empty",
+    "description": "Empty profile badge"
+  },
+  "currentBadge": {
+    "message": "Current",
+    "description": "Current profile badge"
+  },
+  "createdAt": {
+    "message": "Created",
+    "description": "Created time"
+  },
+  "modalSave": {
+    "message": "Save Profile",
+    "description": "Save profile modal title"
+  },
+  "modalRename": {
+    "message": "Rename Profile",
+    "description": "Rename profile modal title"
+  },
+  "profileNameLabel": {
+    "message": "Profile Name: ",
+    "description": "Profile name label"
+  },
+  "profileNamePlaceholder": {
+    "message": "Enter profile name",
+    "description": "Profile name input placeholder"
+  },
+  "profileNameHint": {
+    "message": "Use meaningful names like \"Work Account\", \"Personal Account\", etc.",
+    "description": "Profile name input hint"
+  },
+  "renameNameLabel": {
+    "message": "New Profile Name: ",
+    "description": "Rename profile name label"
+  },
+  "renameNamePlaceholder": {
+    "message": "Enter new name",
+    "description": "Rename input placeholder"
+  },
+  "renameNameHint": {
+    "message": "Enter the new profile name",
+    "description": "Rename input hint"
+  },
+  "profileTypeLabel": {
+    "message": "Profile Type: ",
+    "description": "Profile type label"
+  },
+  "profileTypeCurrent": {
+    "message": "Save Current State",
+    "description": "Save current state option"
+  },
+  "profileTypeCurrentDesc": {
+    "message": "Immediately save current cookie state to profile",
+    "description": "Save current state description"
+  },
+  "profileTypeEmpty": {
+    "message": "Create Empty Profile",
+    "description": "Create empty profile option"
+  },
+  "profileTypeEmptyDesc": {
+    "message": "Create empty profile, cookies will be linked automatically after login",
+    "description": "Create empty profile description"
+  },
+  "cancelBtn": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "confirmBtn": {
+    "message": "Confirm",
+    "description": "Confirm button"
+  },
+  "renameConfirmBtn": {
+    "message": "Rename",
+    "description": "Rename confirm button"
+  },
+  "confirmOperation": {
+    "message": "Confirm Operation",
+    "description": "Confirm operation modal title"
+  },
+  "confirmMessage": {
+    "message": "Are you sure you want to perform this operation?",
+    "description": "Confirm message"
+  },
+  "diagnosisReportTitle": {
+    "message": "Cookie Diagnosis Report",
+    "description": "Diagnosis report title"
+  },
+  "diagnosisOkBtn": {
+    "message": "Got it",
+    "description": "Diagnosis report confirm button"
+  },
+  "diagnosisCopyBtn": {
+    "message": "Copy Report",
+    "description": "Copy diagnosis report button"
+  },
+  "closeBtn": {
+    "message": "Close",
+    "description": "Close button"
+  },
+  "version": {
+    "message": "2026",
+    "description": "Version number"
+  },
+  "loadingProfiles": {
+    "message": "Loading profiles...",
+    "description": "Loading profiles state"
+  },
+  "switchingProfile": {
+    "message": "Switching profile...",
+    "description": "Switching profile state"
+  },
+  "switchedToProfile": {
+    "message": "Switched to profile",
+    "description": "Switch success message"
+  },
+  "switchFailed": {
+    "message": "Switch failed",
+    "description": "Switch failed message"
+  },
+  "updateProfile": {
+    "message": "Update Profile",
+    "description": "Update profile title"
+  },
+  "updateProfileConfirm": {
+    "message": "Are you sure you want to update profile",
+    "description": "Update profile confirm message"
+  },
+  "updatingProfile": {
+    "message": "Updating profile...",
+    "description": "Updating profile state"
+  },
+  "profileUpdated": {
+    "message": "updated",
+    "description": "Profile update success"
+  },
+  "deleteProfileTitle": {
+    "message": "Delete Profile",
+    "description": "Delete profile title"
+  },
+  "deleteProfileConfirm": {
+    "message": "Are you sure you want to delete profile",
+    "description": "Delete profile confirm message"
+  },
+  "deleteProfileWarning": {
+    "message": "? This action cannot be undone.",
+    "description": "Delete profile warning"
+  },
+  "deletingProfile": {
+    "message": "Deleting profile...",
+    "description": "Deleting profile state"
+  },
+  "profileDeleted": {
+    "message": "deleted",
+    "description": "Profile delete success"
+  },
+  "profileNameEmpty": {
+    "message": "Profile name cannot be empty",
+    "description": "Empty name error"
+  },
+  "profileNameExists": {
+    "message": "Profile name already exists, please use a different name",
+    "description": "Name exists error"
+  },
+  "renamingProfile": {
+    "message": "Renaming profile...",
+    "description": "Renaming profile state"
+  },
+  "profileRenamed": {
+    "message": "Profile renamed to",
+    "description": "Rename success message"
+  },
+  "clearCookiesConfirm": {
+    "message": "Are you sure you want to clear all cookies for this domain? This will log out all sessions.",
+    "description": "Clear cookies confirm message"
+  },
+  "clearingCookies": {
+    "message": "Clearing cookies...",
+    "description": "Clearing cookies state"
+  },
+  "cookiesCleared": {
+    "message": "Cookies cleared",
+    "description": "Cookies clear success"
+  },
+  "diagnosingCookies": {
+    "message": "Diagnosing cookies...",
+    "description": "Cookie diagnosis state"
+  },
+  "diagnosisFailed": {
+    "message": "Diagnosis failed",
+    "description": "Diagnosis failed message"
+  },
+  "defaultProfileName": {
+    "message": "Default Profile",
+    "description": "Default profile name"
+  },
+  "cannotDeleteDefault": {
+    "message": "Cannot delete default profile, you can update it instead",
+    "description": "Error message for deleting default profile"
+  },
+  "upgradeBtn": {
+    "message": "Upgrade to Premium",
+    "description": "Upgrade to premium button"
+  },
+  "todaySwitches": {
+    "message": "Today's Switches",
+    "description": "Today's switches count"
+  },
+  "totalProfiles": {
+    "message": "Total Profiles",
+    "description": "Total profiles count"
+  },
+  "upgradeModalTitle": {
+    "message": "Upgrade to Premium",
+    "description": "Upgrade modal title"
+  },
+  "upgradeBenefitsTitle": {
+    "message": "Premium Features",
+    "description": "Premium benefits title"
+  },
+  "unlimitedProfiles": {
+    "message": "Unlimited profiles",
+    "description": "Unlimited profiles feature"
+  },
+  "unlimitedSwitches": {
+    "message": "Unlimited switches",
+    "description": "Unlimited switches feature"
+  },
+  "cloudSync": {
+    "message": "Cloud sync (coming soon)",
+    "description": "Cloud sync feature"
+  },
+  "batchImportExport": {
+    "message": "Batch import/export",
+    "description": "Batch import export feature"
+  },
+  "prioritySupport": {
+    "message": "Priority support",
+    "description": "Priority support feature"
+  },
+  "permanentLicense": {
+    "message": "Permanent license",
+    "description": "Permanent license"
+  },
+  "licenseActivationTitle": {
+    "message": "Activate License",
+    "description": "License activation title"
+  },
+  "licenseActivationDesc": {
+    "message": "If you have purchased a license, please enter your license key below:",
+    "description": "License activation description"
+  },
+  "licenseKeyLabel": {
+    "message": "License Key:",
+    "description": "License key label"
+  },
+  "licenseKeyPlaceholder": {
+    "message": "Enter your license key",
+    "description": "License key input placeholder"
+  },
+  "licenseKeyHint": {
+    "message": "License key format: XXXX-XXXX-XXXX-XXXX",
+    "description": "License key format hint"
+  },
+  "purchaseBtn": {
+    "message": "Purchase Premium",
+    "description": "Purchase premium button"
+  },
+  "activateLicenseBtn": {
+    "message": "Activate License",
+    "description": "Activate license button"
+  },
+  "limitReachedTitle": {
+    "message": "Free Version Limit",
+    "description": "Free version limit title"
+  },
+  "limitReachedDesc": {
+    "message": "You have reached the free version limit.",
+    "description": "Free version limit description"
+  },
+  "upgradeToUnlock": {
+    "message": "Upgrade to Unlock",
+    "description": "Upgrade to unlock button"
+  },
+  "profilesOverviewTitle": {
+    "message": "Profiles Overview",
+    "description": "Profiles overview page title"
+  },
+  "allDomainsProfiles": {
+    "message": "View all profiles across domains",
+    "description": "Profiles overview page subtitle"
+  },
+  "totalDomains": {
+    "message": "Total Domains",
+    "description": "Total domains count"
+  },
+  "totalProfilesLabel": {
+    "message": "Total Profiles",
+    "description": "Total profiles label"
+  },
+  "todayUsage": {
+    "message": "Today's Usage",
+    "description": "Today's usage count"
+  },
+  "searchDomains": {
+    "message": "Search domains...",
+    "description": "Search domains input placeholder"
+  },
+  "search": {
+    "message": "Search",
+    "description": "Search button"
+  },
+  "sortByDomain": {
+    "message": "Sort by Domain",
+    "description": "Sort by domain option"
+  },
+  "sortByProfiles": {
+    "message": "Sort by Profiles Count",
+    "description": "Sort by profiles count option"
+  },
+  "sortByLastUsed": {
+    "message": "Sort by Last Used",
+    "description": "Sort by last used option"
+  },
+  "refresh": {
+    "message": "Refresh",
+    "description": "Refresh button"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading state"
+  },
+  "errorTitle": {
+    "message": "Load Failed",
+    "description": "Error title"
+  },
+  "retry": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+  "noDataTitle": {
+    "message": "No Data",
+    "description": "No data title"
+  },
+  "noDataDesc": {
+    "message": "No profiles have been created yet",
+    "description": "No data description"
+  },
+  "domain": {
+    "message": "Domain",
+    "description": "Domain label"
+  },
+  "profileName": {
+    "message": "Profile Name",
+    "description": "Profile name label"
+  },
+  "cookieCount": {
+    "message": "Cookie Count",
+    "description": "Cookie count label"
+  },
+  "lastUsed": {
+    "message": "Last Used",
+    "description": "Last used label"
+  },
+  "createdTime": {
+    "message": "Created Time",
+    "description": "Created time label"
+  },
+  "switchToProfile": {
+    "message": "Switch to Profile",
+    "description": "Switch to profile button"
+  },
+  "deleteProfile": {
+    "message": "Delete Profile",
+    "description": "Delete profile button"
+  },
+  "deleteDomain": {
+    "message": "Delete Domain",
+    "description": "Delete domain button"
+  },
+  "confirmDeleteDomain": {
+    "message": "Are you sure you want to delete domain \"$1\" and its $2 profiles? This action cannot be undone!",
+    "description": "Delete domain confirmation dialog"
+  },
+  "domainDeleted": {
+    "message": "Domain deleted: $1",
+    "description": "Domain deletion success message"
+  },
+  "deleteDomainFailed": {
+    "message": "Failed to delete domain",
+    "description": "Delete domain failed message"
+  },
+  "clickToVisit": {
+    "message": "Click to visit $1",
+    "description": "Click to visit domain tooltip"
+  },
+  "visitingDomain": {
+    "message": "Visiting $1",
+    "description": "Visiting domain notification"
+  },
+  "visitDomainFailed": {
+    "message": "Failed to visit domain",
+    "description": "Visit domain failed message"
+  },
+  "cookieDetails": {
+    "message": "Cookie Details",
+    "description": "Cookie details title"
+  },
+  "showCookies": {
+    "message": "Show Cookies",
+    "description": "Show cookies button"
+  },
+  "hideCookies": {
+    "message": "Hide Cookies",
+    "description": "Hide cookies button"
+  },
+  "profilesOverview": {
+    "message": "Profiles Overview",
+    "description": "Profiles overview button"
+  },
+  "exportBtn": {
+    "message": "Export",
+    "description": "Export button"
+  },
+  "importBtn": {
+    "message": "Import",
+    "description": "Import button"
+  },
+  "exportAllProfiles": {
+    "message": "Export all profiles",
+    "description": "Export all profiles tooltip"
+  },
+  "importProfiles": {
+    "message": "Import profiles",
+    "description": "Import profiles tooltip"
+  }
+} 

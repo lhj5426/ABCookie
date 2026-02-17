@@ -1,0 +1,518 @@
+{
+  "extName": {
+    "message": "Cookie Profile Switcher",
+    "description": "扩展程序名称"
+  },
+  "extDesc": {
+    "message": "在每个域名下存储和管理多个cookie配置文件，轻松切换不同用户会话",
+    "description": "扩展程序描述"
+  },
+  "currentDomain": {
+    "message": "当前域名：",
+    "description": "当前域名标签"
+  },
+  "loading": {
+    "message": "正在加载配置文件...",
+    "description": "加载状态文本"
+  },
+  "errorOccurred": {
+    "message": "出现错误",
+    "description": "错误状态文本"
+  },
+  "retryBtn": {
+    "message": "重试",
+    "description": "重试按钮"
+  },
+  "currentStatus": {
+    "message": "当前状态",
+    "description": "当前状态标题"
+  },
+  "cookieCount": {
+    "message": "Cookie数量",
+    "description": "Cookie数量文本"
+  },
+  "current": {
+    "message": "当前",
+    "description": "当前配置文件"
+  },
+  "createNewProfile": {
+    "message": "创建新配置文件",
+    "description": "创建新配置文件按钮"
+  },
+  "clearCookies": {
+    "message": "清除Cookie",
+    "description": "清除Cookie按钮"
+  },
+  "cookieDiagnosis": {
+    "message": "Cookie诊断",
+    "description": "Cookie诊断按钮"
+  },
+  "savedProfiles": {
+    "message": "已保存的配置文件",
+    "description": "已保存配置文件标题"
+  },
+  "noProfilesTitle": {
+    "message": "正在为你创建默认配置文件...",
+    "description": "无配置文件时的标题"
+  },
+  "noProfilesHint": {
+    "message": "首次使用时会自动保存当前Cookie状态",
+    "description": "无配置文件时的提示"
+  },
+  "switchBtn": {
+    "message": "切换",
+    "description": "切换按钮"
+  },
+  "syncBtn": {
+    "message": "同步",
+    "description": "同步按钮"
+  },
+  "renameBtn": {
+    "message": "重命名",
+    "description": "重命名按钮"
+  },
+  "deleteBtn": {
+    "message": "删除",
+    "description": "删除按钮"
+  },
+  "defaultBadge": {
+    "message": "默认",
+    "description": "默认配置文件徽章"
+  },
+  "emptyBadge": {
+    "message": "空配置",
+    "description": "空配置文件徽章"
+  },
+  "currentBadge": {
+    "message": "当前使用",
+    "description": "当前配置文件徽章"
+  },
+  "createdAt": {
+    "message": "创建于",
+    "description": "创建时间"
+  },
+  "modalSave": {
+    "message": "保存配置文件",
+    "description": "保存配置文件模态框标题"
+  },
+  "modalRename": {
+    "message": "重命名配置文件",
+    "description": "重命名配置文件模态框标题"
+  },
+  "profileNameLabel": {
+    "message": "配置文件名称：",
+    "description": "配置文件名称标签"
+  },
+  "profileNamePlaceholder": {
+    "message": "请输入配置文件名称",
+    "description": "配置文件名称输入框占位符"
+  },
+  "profileNameHint": {
+    "message": "建议使用有意义的名称，如\"工作账户\"、\"个人账户\"等",
+    "description": "配置文件名称输入提示"
+  },
+  "renameNameLabel": {
+    "message": "新的配置文件名称：",
+    "description": "重命名配置文件名称标签"
+  },
+  "renameNamePlaceholder": {
+    "message": "请输入新名称",
+    "description": "重命名输入框占位符"
+  },
+  "renameNameHint": {
+    "message": "请输入新的配置文件名称",
+    "description": "重命名输入提示"
+  },
+  "profileTypeLabel": {
+    "message": "配置文件类型：",
+    "description": "配置文件类型标签"
+  },
+  "profileTypeCurrent": {
+    "message": "保存当前状态",
+    "description": "保存当前状态选项"
+  },
+  "profileTypeCurrentDesc": {
+    "message": "立即保存当前Cookie状态到配置文件",
+    "description": "保存当前状态描述"
+  },
+  "profileTypeEmpty": {
+    "message": "创建空配置文件",
+    "description": "创建空配置文件选项"
+  },
+  "profileTypeEmptyDesc": {
+    "message": "创建空配置文件，稍后登录时自动关联Cookie",
+    "description": "创建空配置文件描述"
+  },
+  "cancelBtn": {
+    "message": "取消",
+    "description": "取消按钮"
+  },
+  "confirmBtn": {
+    "message": "确认",
+    "description": "确认按钮"
+  },
+  "renameConfirmBtn": {
+    "message": "重命名",
+    "description": "重命名确认按钮"
+  },
+  "confirmOperation": {
+    "message": "确认操作",
+    "description": "确认操作模态框标题"
+  },
+  "confirmMessage": {
+    "message": "确定要执行此操作吗？",
+    "description": "确认消息"
+  },
+  "diagnosisReportTitle": {
+    "message": "Cookie诊断报告",
+    "description": "诊断报告标题"
+  },
+  "diagnosisOkBtn": {
+    "message": "知道了",
+    "description": "诊断报告确认按钮"
+  },
+  "diagnosisCopyBtn": {
+    "message": "复制报告",
+    "description": "复制诊断报告按钮"
+  },
+  "closeBtn": {
+    "message": "关闭",
+    "description": "关闭按钮"
+  },
+  "version": {
+    "message": "2026",
+    "description": "版本号"
+  },
+  "loadingProfiles": {
+    "message": "正在加载配置文件...",
+    "description": "加载配置文件状态"
+  },
+  "switchingProfile": {
+    "message": "正在切换配置文件...",
+    "description": "切换配置文件状态"
+  },
+  "switchedToProfile": {
+    "message": "已切换到配置文件",
+    "description": "切换成功消息"
+  },
+  "switchFailed": {
+    "message": "切换失败",
+    "description": "切换失败消息"
+  },
+  "updateProfile": {
+    "message": "更新配置文件",
+    "description": "更新配置文件标题"
+  },
+  "updateProfileConfirm": {
+    "message": "确定要用当前Cookie状态更新配置文件",
+    "description": "更新配置文件确认消息"
+  },
+  "updatingProfile": {
+    "message": "正在更新配置文件...",
+    "description": "更新配置文件状态"
+  },
+  "profileUpdated": {
+    "message": "已更新",
+    "description": "配置文件更新成功"
+  },
+  "deleteProfileTitle": {
+    "message": "删除配置文件",
+    "description": "删除配置文件标题"
+  },
+  "deleteProfileConfirm": {
+    "message": "确定要删除配置文件",
+    "description": "删除配置文件确认消息"
+  },
+  "deleteProfileWarning": {
+    "message": "吗？此操作无法撤销。",
+    "description": "删除配置文件警告"
+  },
+  "deletingProfile": {
+    "message": "正在删除配置文件...",
+    "description": "删除配置文件状态"
+  },
+  "profileDeleted": {
+    "message": "已删除",
+    "description": "配置文件删除成功"
+  },
+  "profileNameEmpty": {
+    "message": "配置文件名称不能为空",
+    "description": "空名称错误"
+  },
+  "profileNameExists": {
+    "message": "配置文件名称已存在，请使用其他名称",
+    "description": "名称已存在错误"
+  },
+  "renamingProfile": {
+    "message": "正在重命名配置文件...",
+    "description": "重命名配置文件状态"
+  },
+  "profileRenamed": {
+    "message": "配置文件已重命名为",
+    "description": "重命名成功消息"
+  },
+  "clearCookiesConfirm": {
+    "message": "确定要清除当前域名的所有Cookie吗？这将退出所有登录状态。",
+    "description": "清除Cookie确认消息"
+  },
+  "clearingCookies": {
+    "message": "正在清除Cookie...",
+    "description": "清除Cookie状态"
+  },
+  "cookiesCleared": {
+    "message": "Cookie已清除",
+    "description": "Cookie清除成功"
+  },
+  "diagnosingCookies": {
+    "message": "正在进行Cookie诊断...",
+    "description": "Cookie诊断状态"
+  },
+  "diagnosisFailed": {
+    "message": "诊断失败",
+    "description": "诊断失败消息"
+  },
+  "defaultProfileName": {
+    "message": "默认配置",
+    "description": "默认配置文件的名称"
+  },
+  "cannotDeleteDefault": {
+    "message": "不能删除默认配置文件，可以更新它",
+    "description": "删除默认配置的错误消息"
+  },
+  "upgradeBtn": {
+    "message": "升级高级版",
+    "description": "升级高级版按钮"
+  },
+  "todaySwitches": {
+    "message": "今日切换",
+    "description": "今日切换次数统计"
+  },
+  "totalProfiles": {
+    "message": "总配置文件",
+    "description": "总配置文件数量统计"
+  },
+  "upgradeModalTitle": {
+    "message": "升级到高级版",
+    "description": "升级模态框标题"
+  },
+  "upgradeBenefitsTitle": {
+    "message": "高级版功能特权",
+    "description": "升级功能标题"
+  },
+  "unlimitedProfiles": {
+    "message": "无限配置文件数量",
+    "description": "无限配置文件功能"
+  },
+  "unlimitedSwitches": {
+    "message": "无限切换次数",
+    "description": "无限切换功能"
+  },
+  "cloudSync": {
+    "message": "云同步功能（即将推出）",
+    "description": "云同步功能"
+  },
+  "batchImportExport": {
+    "message": "批量导入/导出",
+    "description": "批量导入导出功能"
+  },
+  "prioritySupport": {
+    "message": "优先技术支持",
+    "description": "优先技术支持"
+  },
+  "permanentLicense": {
+    "message": "永久许可证",
+    "description": "永久许可证"
+  },
+  "licenseActivationTitle": {
+    "message": "激活许可证",
+    "description": "许可证激活标题"
+  },
+  "licenseActivationDesc": {
+    "message": "如果您已购买许可证，请在下方输入许可证密钥：",
+    "description": "许可证激活描述"
+  },
+  "licenseKeyLabel": {
+    "message": "许可证密钥：",
+    "description": "许可证密钥标签"
+  },
+  "licenseKeyPlaceholder": {
+    "message": "请输入许可证密钥",
+    "description": "许可证密钥输入框占位符"
+  },
+  "licenseKeyHint": {
+    "message": "许可证密钥格式：XXXX-XXXX-XXXX-XXXX",
+    "description": "许可证密钥格式提示"
+  },
+  "purchaseBtn": {
+    "message": "购买高级版",
+    "description": "购买高级版按钮"
+  },
+  "activateLicenseBtn": {
+    "message": "激活许可证",
+    "description": "激活许可证按钮"
+  },
+  "limitReachedTitle": {
+    "message": "免费版限制",
+    "description": "免费版限制提示标题"
+  },
+  "limitReachedDesc": {
+    "message": "您已达到免费版使用限制。",
+    "description": "免费版限制描述"
+  },
+  "upgradeToUnlock": {
+    "message": "升级解锁",
+    "description": "升级解锁按钮"
+  },
+  "profilesOverviewTitle": {
+    "message": "配置文件统计",
+    "description": "配置文件统计页面标题"
+  },
+  "allDomainsProfiles": {
+    "message": "查看所有域名下的配置文件",
+    "description": "配置文件统计页面副标题"
+  },
+  "totalDomains": {
+    "message": "总域名数",
+    "description": "总域名数统计"
+  },
+  "totalProfilesLabel": {
+    "message": "总配置文件",
+    "description": "总配置文件统计标签"
+  },
+  "todayUsage": {
+    "message": "今日使用",
+    "description": "今日使用统计"
+  },
+  "searchDomains": {
+    "message": "搜索域名...",
+    "description": "搜索域名输入框占位符"
+  },
+  "search": {
+    "message": "搜索",
+    "description": "搜索按钮"
+  },
+  "sortByDomain": {
+    "message": "按域名排序",
+    "description": "按域名排序选项"
+  },
+  "sortByProfiles": {
+    "message": "按配置文件数排序",
+    "description": "按配置文件数排序选项"
+  },
+  "sortByLastUsed": {
+    "message": "按最后使用排序",
+    "description": "按最后使用排序选项"
+  },
+  "refresh": {
+    "message": "刷新",
+    "description": "刷新按钮"
+  },
+  "loading": {
+    "message": "加载中...",
+    "description": "加载状态"
+  },
+  "errorTitle": {
+    "message": "加载失败",
+    "description": "错误标题"
+  },
+  "retry": {
+    "message": "重试",
+    "description": "重试按钮"
+  },
+  "noDataTitle": {
+    "message": "暂无数据",
+    "description": "无数据标题"
+  },
+  "noDataDesc": {
+    "message": "还没有创建任何配置文件",
+    "description": "无数据描述"
+  },
+  "domain": {
+    "message": "域名",
+    "description": "域名标签"
+  },
+  "profileName": {
+    "message": "配置文件名",
+    "description": "配置文件名标签"
+  },
+  "cookieCount": {
+    "message": "Cookie数量",
+    "description": "Cookie数量标签"
+  },
+  "lastUsed": {
+    "message": "最后使用",
+    "description": "最后使用标签"
+  },
+  "createdTime": {
+    "message": "创建时间",
+    "description": "创建时间标签"
+  },
+  "switchToProfile": {
+    "message": "切换到此配置",
+    "description": "切换到此配置按钮"
+  },
+  "deleteProfile": {
+    "message": "删除配置",
+    "description": "删除配置按钮"
+  },
+  "deleteDomain": {
+    "message": "删除域名",
+    "description": "删除域名按钮"
+  },
+  "confirmDeleteDomain": {
+    "message": "确定要删除域名 \"$1\" 及其下的 $2 个配置文件吗？此操作不可撤销！",
+    "description": "删除域名确认对话框"
+  },
+  "domainDeleted": {
+    "message": "已删除域名: $1",
+    "description": "域名删除成功消息"
+  },
+  "deleteDomainFailed": {
+    "message": "删除域名失败",
+    "description": "删除域名失败消息"
+  },
+  "clickToVisit": {
+    "message": "点击访问 $1",
+    "description": "点击访问域名提示"
+  },
+  "visitingDomain": {
+    "message": "正在访问 $1",
+    "description": "访问域名通知"
+  },
+  "visitDomainFailed": {
+    "message": "访问域名失败",
+    "description": "访问域名失败消息"
+  },
+  "cookieDetails": {
+    "message": "Cookie详情",
+    "description": "Cookie详情标题"
+  },
+  "showCookies": {
+    "message": "显示Cookie",
+    "description": "显示Cookie按钮"
+  },
+  "hideCookies": {
+    "message": "隐藏Cookie",
+    "description": "隐藏Cookie按钮"
+  },
+  "profilesOverview": {
+    "message": "配置文件统计",
+    "description": "配置文件统计按钮"
+  },
+  "exportBtn": {
+    "message": "导出",
+    "description": "导出按钮"
+  },
+  "importBtn": {
+    "message": "导入",
+    "description": "导入按钮"
+  },
+  "exportAllProfiles": {
+    "message": "导出所有配置文件",
+    "description": "导出所有配置文件提示"
+  },
+  "importProfiles": {
+    "message": "导入配置文件",
+    "description": "导入配置文件提示"
+  }
+} 

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__MSG_extName__</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header class="header">
+            <div class="logo">
+                <span class="icon">🍪</span>
+                <h1>__MSG_extName__</h1>
+            </div>
+            <div class="current-domain">
+                <span class="domain-label">__MSG_currentDomain__</span>
+                <span id="currentDomain" class="domain-text">__MSG_loading__</span>
+            </div>
+        </header>
+        
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 加载状态 -->
+            <div id="loadingState" class="loading-state">
+                <div class="spinner"></div>
+                <p>__MSG_loading__</p>
+            </div>
+            
+            <!-- 错误状态 -->
+            <div id="errorState" class="error-state" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <p id="errorMessage">__MSG_errorOccurred__</p>
+                <button id="retryBtn" class="retry-btn">__MSG_retryBtn__</button>
+            </div>
+            
+            <!-- 使用统计和许可证信息 -->
+            <div class="license-section" id="licenseSection" style="display: none;">
+                <div class="license-info">
+                    <div class="license-status">
+                        <span class="license-type" id="licenseType">免费版</span>
+                        <button class="upgrade-btn" id="upgradeBtn" onclick="showUpgradeModal()">
+                            <span data-i18n="upgradeBtn">升级高级版</span>
+                        </button>
+                    </div>
+                    <div class="usage-stats" id="usageStats">
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="todaySwitches">今日切换</span>
+                            <span class="stat-value" id="todaySwitchesValue">0/20</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label" data-i18n="totalProfiles">总配置文件</span>
+                            <span class="stat-value" id="totalProfilesValue">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 配置文件列表 -->
+            <div id="profilesSection" class="profiles-section" style="display: none;">
+                <!-- 当前状态 -->
+                <div class="current-status">
+                    <div class="status-info">
+                        <span class="status-icon">📊</span>
+                        <div class="status-text">
+                            <div class="status-title">__MSG_currentStatus__</div>
+                            <div id="cookieCount" class="status-detail">__MSG_cookieCount__: 0</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 快速操作按钮 -->
+                <div class="quick-actions">
+                    <button id="saveNewProfileBtn" class="action-btn primary">
+                        <span class="btn-icon">💾</span>
+                        __MSG_createNewProfile__
+                    </button>
+                    <button id="clearCookiesBtn" class="action-btn danger">
+                        <span class="btn-icon">🗑️</span>
+                        __MSG_clearCookies__
+                    </button>
+                </div>
+                
+                <!-- Cookie诊断和统计按钮 -->
+                <div class="diagnosis-section">
+                    <button id="diagnoseCookiesBtn" class="action-btn secondary">
+                        <span class="btn-icon">🔍</span>
+                        __MSG_cookieDiagnosis__
+                    </button>
+                    <button id="profilesOverviewBtn" class="action-btn secondary">
+                        <span class="btn-icon">📊</span>
+                        __MSG_profilesOverview__
+                    </button>
+                </div>
+                
+                <!-- 配置文件列表 -->
+                <div class="profiles-list">
+                    <div class="section-header">
+                        <h3>__MSG_savedProfiles__</h3>
+                        <span id="profileCount" class="count-badge">0</span>
+                    </div>
+                    <div id="profilesList" class="profiles-container">
+                        <!-- 配置文件项将动态插入这里 -->
+                    </div>
+                    <div id="noProfiles" class="no-profiles">
+                        <div class="empty-icon">📁</div>
+                        <p>__MSG_noProfilesTitle__</p>
+                        <p class="empty-hint">__MSG_noProfilesHint__</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- 底部信息 -->
+        <footer class="footer">
+            <div class="version-info">__MSG_version__</div>
+        </footer>
+    </div>
+    
+            <!-- 模态对话框 -->
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">__MSG_modalSave__</h3>
+                    <button id="modalCloseBtn" class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <label for="profileNameInput">__MSG_profileNameLabel__</label>
+                        <input type="text" id="profileNameInput" placeholder="__MSG_profileNamePlaceholder__" maxlength="50">
+                        <div class="input-hint">__MSG_profileNameHint__</div>
+                    </div>
+                    
+                    <div class="profile-type-selection">
+                        <label class="profile-type-label">__MSG_profileTypeLabel__</label>
+                        <div class="profile-type-options">
+                            <label class="profile-type-option">
+                                <input type="radio" name="profileType" value="current" checked>
+                                <div class="option-content">
+                                    <div class="option-title">💾 __MSG_profileTypeCurrent__</div>
+                                    <div class="option-desc">__MSG_profileTypeCurrentDesc__</div>
+                                </div>
+                            </label>
+                            <label class="profile-type-option">
+                                <input type="radio" name="profileType" value="empty">
+                                <div class="option-content">
+                                    <div class="option-title">📁 __MSG_profileTypeEmpty__</div>
+                                    <div class="option-desc">__MSG_profileTypeEmptyDesc__</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="modalCancelBtn" class="modal-btn secondary">__MSG_cancelBtn__</button>
+                    <button id="modalConfirmBtn" class="modal-btn primary">__MSG_confirmBtn__</button>
+                </div>
+            </div>
+        </div>
+    
+            <!-- 确认对话框 -->
+        <div id="confirmModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="confirmTitle">__MSG_confirmOperation__</h3>
+                    <button id="confirmCloseBtn" class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmMessage">__MSG_confirmMessage__</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirmCancelBtn" class="modal-btn secondary">__MSG_cancelBtn__</button>
+                    <button id="confirmOkBtn" class="modal-btn danger">__MSG_confirmBtn__</button>
+                </div>
+            </div>
+        </div>
+    
+            <!-- Cookie诊断对话框 -->
+        <div id="diagnosisModal" class="modal" style="display: none;">
+            <div class="modal-content diagnosis-modal">
+                <div class="modal-header">
+                    <h3>__MSG_diagnosisReportTitle__</h3>
+                    <button id="diagnosisCloseBtn" class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="diagnosisContent" class="diagnosis-content">
+                        <!-- 诊断内容将动态插入这里 -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="diagnosisOkBtn" class="modal-btn primary">__MSG_diagnosisOkBtn__</button>
+                    <button id="copyDiagnosisBtn" class="modal-btn secondary">__MSG_diagnosisCopyBtn__</button>
+                </div>
+            </div>
+        </div>
+    
+    <!-- 升级高级版模态框 -->
+    <div id="upgradeModal" class="modal" style="display: none;">
+        <div class="modal-content upgrade-modal">
+            <div class="modal-header">
+                <h3>__MSG_upgradeModalTitle__</h3>
+                <button id="upgradeCloseBtn" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upgrade-info">
+                    <div class="upgrade-benefits">
+                        <h4>__MSG_upgradeBenefitsTitle__</h4>
+                        <ul class="benefits-list">
+                            <li><span class="benefit-icon">✅</span> __MSG_unlimitedProfiles__</li>
+                            <li><span class="benefit-icon">✅</span> __MSG_unlimitedSwitches__</li>
+                            <li><span class="benefit-icon">✅</span> __MSG_cloudSync__</li>
+                            <li><span class="benefit-icon">✅</span> __MSG_batchImportExport__</li>
+                            <li><span class="benefit-icon">✅</span> __MSG_prioritySupport__</li>
+                        </ul>
+                    </div>
+                    <div class="upgrade-pricing">
+                        <div class="price-card">
+                            <div class="price">¥29.99</div>
+                            <div class="period">__MSG_permanentLicense__</div>
+                        </div>
+                    </div>
+                    <div class="license-activation">
+                        <h4>__MSG_licenseActivationTitle__</h4>
+                        <p>__MSG_licenseActivationDesc__</p>
+                        <div class="input-group">
+                            <label for="licenseKeyInput">__MSG_licenseKeyLabel__</label>
+                            <input type="text" id="licenseKeyInput" placeholder="__MSG_licenseKeyPlaceholder__" />
+                            <div class="input-hint">__MSG_licenseKeyHint__</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="purchaseBtn" class="modal-btn primary">__MSG_purchaseBtn__</button>
+                <button id="activateLicenseBtn" class="modal-btn secondary">__MSG_activateLicenseBtn__</button>
+                <button id="upgradeCancelBtn" class="modal-btn default">__MSG_cancelBtn__</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 通知提示 -->
+    <div id="notification" class="notification" style="display: none;">
+        <div class="notification-content">
+            <span id="notificationIcon" class="notification-icon"></span>
+            <span id="notificationMessage" class="notification-message"></span>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html> 
