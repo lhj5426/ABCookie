@@ -20,3 +20,13 @@ https://chromewebstore.google.com/detail/cookie-profile-switcher/coopicdfnpehdon
 原版没有导入导出配置的功能 用AI 添加了导入导出功能
 
 <img width="449" height="640" alt="image" src="https://github.com/user-attachments/assets/7309911b-5278-4f74-a5df-42306e2d228d" />
+
+修复 不是按照域名 而是按照 网址切换和保存的问题
+
+<img width="486" height="136" alt="image" src="https://github.com/user-attachments/assets/daaa0f4d-7806-45bb-9547-3fe8f750ff5b" />
+
+<img width="462" height="147" alt="image" src="https://github.com/user-attachments/assets/cace625f-2c4d-4fb8-89df-5e23551d8ce9" />
+
+以B站为例子 这样才对 上面的都是错误的 
+
+<img width="412" height="144" alt="image" src="https://github.com/user-attachments/assets/2fe5d153-1de8-4f0d-b66a-7821fbf4e1d6" />
