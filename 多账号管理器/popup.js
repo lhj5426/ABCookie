@@ -142,17 +142,36 @@
         await b(i.sites)
     }
 
-    function E(n) {
+    const DOMAIN_ROOT_SUFFIXES = new Set(["ac.cn", "com.cn", "edu.cn", "gov.cn", "mil.cn", "net.cn", "org.cn", "com.hk", "edu.hk", "gov.hk", "idv.hk", "net.hk", "org.hk", "co.jp", "ne.jp", "or.jp", "co.kr", "ne.kr", "or.kr", "co.uk", "gov.uk", "ltd.uk", "me.uk", "net.uk", "org.uk", "com.au", "edu.au", "gov.au", "net.au", "org.au", "com.br", "com.mx", "com.sg", "com.tr", "com.tw", "com.vn"]);
+
+    function isIpLikeHost(n) {
+        return /^\d{1,3}(\.\d{1,3}){3}$/.test(n) || n.includes(":")
+    }
+
+    function extractHostFromSiteInput(n) {
+        if (!n || typeof n != "string") return null;
+        let t = n.trim();
+        if (!t) return null;
         try {
-            let t = new URL(n);
-            return t.protocol === "chrome:" || t.protocol === "edge:" || t.protocol === "about:" ? null : t.hostname.toLowerCase()
-        } catch {
-            return null
-        }
+            let e = new URL(t);
+            return e.protocol === "chrome:" || e.protocol === "edge:" || e.protocol === "about:" ? null : e.hostname.toLowerCase()
+        } catch {}
+        if (t.includes("/") || t.includes("\\") || /\s/.test(t)) return null;
+        return t.replace(/^\.+/, "").replace(/\.+$/, "").toLowerCase() || null
+    }
+
+    function E(n) {
+        let t = extractHostFromSiteInput(n);
+        if (!t) return null;
+        if (t === "localhost" || isIpLikeHost(t)) return t;
+        let e = t.split(".").filter(Boolean);
+        if (e.length <= 2) return t;
+        let i = e.slice(-2).join(".");
+        return DOMAIN_ROOT_SUFFIXES.has(i) && e.length >= 3 ? e.slice(-3).join(".") : i
     }
 
     function gt(n) {
-        return n.toLowerCase()
+        return E(n) || n.toLowerCase()
     }
 
     function Q(n) {

@@ -268,11 +268,51 @@ class LicenseManager {
 // 创建全局许可证管理器实例
 const licenseManager = new LicenseManager();
 
-// 工具函数：从URL中提取域名
+// 常见的多级公共后缀，用于把子域名归并到根域名
+const MULTI_LABEL_PUBLIC_SUFFIXES = new Set([
+    'ac.cn', 'com.cn', 'edu.cn', 'gov.cn', 'mil.cn', 'net.cn', 'org.cn',
+    'com.hk', 'edu.hk', 'gov.hk', 'idv.hk', 'net.hk', 'org.hk',
+    'co.jp', 'ne.jp', 'or.jp',
+    'co.kr', 'ne.kr', 'or.kr',
+    'co.uk', 'gov.uk', 'ltd.uk', 'me.uk', 'net.uk', 'org.uk',
+    'com.au', 'edu.au', 'gov.au', 'net.au', 'org.au',
+    'com.br', 'com.mx', 'com.sg', 'com.tr', 'com.tw', 'com.vn'
+]);
+
+function isIpAddress(hostname) {
+    return /^\d{1,3}(\.\d{1,3}){3}$/.test(hostname) || hostname.includes(':');
+}
+
+function getRegistrableDomain(hostname) {
+    if (!hostname) {
+        return null;
+    }
+
+    const normalizedHostname = hostname.toLowerCase().replace(/\.$/, '');
+
+    if (!normalizedHostname || normalizedHostname === 'localhost' || isIpAddress(normalizedHostname)) {
+        return normalizedHostname;
+    }
+
+    const parts = normalizedHostname.split('.').filter(Boolean);
+
+    if (parts.length <= 2) {
+        return normalizedHostname;
+    }
+
+    const lastTwoLabels = parts.slice(-2).join('.');
+    if (MULTI_LABEL_PUBLIC_SUFFIXES.has(lastTwoLabels) && parts.length >= 3) {
+        return parts.slice(-3).join('.');
+    }
+
+    return parts.slice(-2).join('.');
+}
+
+// 工具函数：从URL中提取用于分组的根域名
 function extractDomain(url) {
     try {
         const urlObj = new URL(url);
-        return urlObj.hostname;
+        return getRegistrableDomain(urlObj.hostname);
     } catch (error) {
         console.error('无效的URL:', url, error);
         return null;
@@ -289,11 +329,56 @@ function generateId() {
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
 
+const COOKIE_OPERATION_BATCH_SIZE = 12;
+
 /**
  * Cookie管理类
  * 封装所有cookie相关的操作
  */
 class CookieManager {
+    getCookieUrl(cookie) {
+        const cookieDomain = cookie.domain.startsWith('.') ? cookie.domain.slice(1) : cookie.domain;
+        return `http${cookie.secure ? 's' : ''}://${cookieDomain}${cookie.path}`;
+    }
+
+    buildCookieDetails(cookie) {
+        const cookieDetails = {
+            url: this.getCookieUrl(cookie),
+            name: cookie.name,
+            value: cookie.value,
+            domain: cookie.domain,
+            path: cookie.path,
+            secure: cookie.secure,
+            httpOnly: cookie.httpOnly,
+            sameSite: cookie.sameSite
+        };
+
+        if (cookie.expirationDate) {
+            cookieDetails.expirationDate = cookie.expirationDate;
+        }
+
+        return cookieDetails;
+    }
+
+    async runCookieOperationsInBatches(items, handler, batchSize = COOKIE_OPERATION_BATCH_SIZE) {
+        const failures = [];
+
+        for (let i = 0; i < items.length; i += batchSize) {
+            const batch = items.slice(i, i + batchSize);
+            const results = await Promise.allSettled(batch.map(item => handler(item)));
+
+            results.forEach((result, index) => {
+                if (result.status === 'rejected') {
+                    failures.push({
+                        item: batch[index],
+                        error: result.reason
+                    });
+                }
+            });
+        }
+
+        return failures;
+    }
     
     /**
      * 获取指定域名的所有cookie
@@ -506,6 +591,23 @@ class CookieManager {
             
             // 首先清除当前域名的所有cookie
             await this.clearCookiesForDomain(domain);
+
+            const setFailures = await this.runCookieOperationsInBatches(
+                profile.cookies,
+                async (cookie) => {
+                    await chrome.cookies.set(this.buildCookieDetails(cookie));
+                }
+            );
+
+            setFailures.forEach(({ item, error }) => {
+                console.warn(`设置cookie失败 (${item.name}):`, error);
+            });
+
+            await this.setCurrentProfile(domain, profileName);
+            await licenseManager.recordSwitch();
+
+            logOperation('恢复配置文件成功', domain, `- 配置文件: ${profileName} - Cookie数量: ${profile.cookies.length} - 失败数量: ${setFailures.length}`);
+            return true;
             
             // 恢复配置文件中的cookie
             for (const cookie of profile.cookies) {
@@ -560,6 +662,26 @@ class CookieManager {
             logOperation('清除Cookie', domain);
             
             const cookies = await this.getCookiesForDomain(domain);
+
+            const removeFailures = await this.runCookieOperationsInBatches(
+                cookies,
+                async (cookie) => {
+                    await chrome.cookies.remove({
+                        url: this.getCookieUrl(cookie),
+                        name: cookie.name
+                    });
+                }
+            );
+
+            removeFailures.forEach(({ item, error }) => {
+                console.warn(`删除cookie失败 (${item.name}):`, error);
+            });
+
+            const currentProfileKeyFast = `current_profile_${domain}`;
+            await chrome.storage.local.remove([currentProfileKeyFast]);
+
+            logOperation('清除Cookie成功', domain, `- 共清除${cookies.length}个 - 失败数量: ${removeFailures.length}`);
+            return true;
             
             for (const cookie of cookies) {
                 const url = `http${cookie.secure ? 's' : ''}://${cookie.domain.startsWith('.') ? cookie.domain.slice(1) : cookie.domain}${cookie.path}`;
